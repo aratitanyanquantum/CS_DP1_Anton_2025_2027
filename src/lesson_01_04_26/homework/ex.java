@@ -1,19 +1,22 @@
 package lesson_01_04_26.homework;
-
 class Point {
     double x, y;
+    static int count=0;
+
     Point(double x, double y) {
         this.x = x;
         this.y = y;
+        count++;
     }
     Point(Point p) {
-        this.x = p.x;
-        this.y = p.y;
+        this(p.x,p.y);
+        count++;
     }
     Point() {
-        this.x = 0.0;
-        this.y = 0.0;
+        this(0,0);
+        count++;
     }
+
 
     void printPoint(){
         System.out.println("Point: " + this.x + ", " + this.y);
@@ -21,6 +24,13 @@ class Point {
 
     void printEqual(Point p){
         if(this.x == p.x && this.y == p.y){
+            System.out.println("Point: equal");
+        }else{
+            System.out.println("Point: not equal");
+        }
+    }
+    static void printEqual(Point p1, Point p2){
+        if(p1.x == p2.x && p1.y == p2.y){
             System.out.println("Point: equal");
         }else{
             System.out.println("Point: not equal");
@@ -41,6 +51,9 @@ class Point {
 
     double distancePoint(Point p){
         return Math.sqrt(Math.abs(this.x - p.x)*Math.abs(this.x - p.x)  + Math.abs(this.y - p.y)*Math.abs(this.y - p.y));
+    }
+    static double distancePoint(Point p1, Point p2){
+        return Math.sqrt(Math.abs(p1.x - p2.x)*Math.abs(p1.x - p2.x)  + Math.abs(p1.y - p2.y)*Math.abs(p1.y - p2.y));
     }
 
     Point bigpoint(){
@@ -241,9 +254,7 @@ public class ex {
 
         Vector v0=new Vector(new Point(0,0),new Point(0,0));
         v0.amena(vectors);
-
-
-
+        System.out.println(Point.count);
 
 
 
