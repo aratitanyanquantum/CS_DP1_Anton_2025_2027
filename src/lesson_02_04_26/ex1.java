@@ -6,16 +6,24 @@ class Glan{
     double height;
     double r;
 
+    Glan(double height, double r){
+        setHeight(height);
+        setR(r);
+    }
 
-    Glan(double height,double r){
-        this.height=height;
-        this.r=r;
-        count++;
+    public double getHeight() {
+        return height;
     }
-    Glan(){
-        this(1,1);
-        count++;
+    public void setHeight(double height) {
+        this.height = height;
     }
+    public double getR() {
+        return r;
+    }
+    public void setR(double r) {
+        this.r = r;
+    }
+
 
     double v(){
         return pi*height*r*r;
@@ -55,6 +63,33 @@ class Glan{
 
 }
 public class ex1 {
+    public static void main(String[] args) {
+        Glan g1 = new Glan(10.0, 5.0);
+        Glan g2 = new Glan(10.0, 5.0);
+        Glan g3 = new Glan(5.0, 2.0);
+        Glan g4 = new Glan(15.0, 8.0);
+
+        System.out.println("--- Testing Instance Methods ---");
+        System.out.println("Cylinder 1 Volume (v): " + g1.v());
+        System.out.println("Cylinder 1 Lateral Surface Area (sKoxm): " + g1.sKoxm());
+        System.out.println("Cylinder 1 Total Surface Area (s): " + g1.s());
+
+
+        System.out.println("\n--- Testing 'same' Method ---");
+        System.out.println("Are g1 and g2 the same? " + Glan.same(g1, g2));
+        System.out.println("Are g1 and g3 the same? " + Glan.same(g1, g3));
+
+
+        System.out.println("\n--- Testing 'vol' Method (Array) ---");
+        Glan[] cylinders = {g1, g3, g4};
+
+        System.out.println("Volume of g1: " + g1.v());
+        System.out.println("Volume of g3: " + g3.v());
+        System.out.println("Volume of g4: " + g4.v());
+
+        Glan result = Glan.vol(cylinders);
+        System.out.println("The 'vol' method returned the cylinder with height: " + result.getHeight() + " and radius: " + result.getR() + " (Volume: " + result.v() + ")");
+    }
 
 
 }
