@@ -3,8 +3,8 @@ class Glan{
     static int count=0;
 
     static double pi=3.14;
-    double height;
-    double r;
+    private double height;
+    private double r;
 
     Glan(double height, double r){
         setHeight(height);
