@@ -88,7 +88,7 @@ class Group {
     public double bill(int[] gRooms) {
         double sum = 0;
         for (int i = 0; i <gRooms.length; i++) {
-            sum+=HotelsDemo.allRooms[gRooms[i]].price;
+            sum+=HotelsDemo.allRooms[gRooms[i]-1].price;
 
         }
         System.out.println(sum);
