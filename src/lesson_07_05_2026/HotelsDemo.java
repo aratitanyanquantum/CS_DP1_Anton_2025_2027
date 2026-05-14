@@ -109,15 +109,11 @@ public class HotelsDemo {
         }
 
 
-
         for (int i = 0; i < allRooms.length; i++) {
-            if(allRooms[i].beds==2 && allRooms[i].empty==true) {
+            if (allRooms[i].beds == 2 && allRooms[i].empty == true) {
                 System.out.println(allRooms[i].roomNumber);
             }
         }
-
-
-
 
 
     }
