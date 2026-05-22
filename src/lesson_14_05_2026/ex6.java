@@ -1,6 +1,19 @@
 package lesson_14_05_2026;
 
-class Stack{
+interface emptyFull{
+    boolean isEmpty();
+    boolean isFull();
+}
+
+interface IStack extends emptyFull{
+    void push(int value);
+    int pop();
+    int peek();
+
+
+}
+
+class Stack implements IStack{
     int[] stack=new int[10];
     int topindex=-1;
     public boolean isEmpty() {
@@ -64,6 +77,10 @@ class Queueue{
 
 
 public class ex6 {
+    static void main() {
+        Stack stack1=new Stack();
+
+    }
 
 
 }
